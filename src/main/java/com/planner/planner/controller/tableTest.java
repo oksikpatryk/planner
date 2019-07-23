@@ -1,6 +1,7 @@
 package com.planner.planner.controller;
 
 import com.planner.planner.entity.Project;
+import com.planner.planner.entity.Task;
 import com.planner.planner.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,7 @@ public class tableTest {
 
     @ModelAttribute("projects")
     public List<Project> projectList() {
-        return projectService.findAll();
+        return projectService.findAllWithTasks();
     }
 
     @GetMapping("/")
@@ -52,7 +53,9 @@ public class tableTest {
 
     @RequestMapping("/project/{id}")
     public String project(@PathVariable Long id, Model model) {
-        model.addAttribute("project", id);
+        Project project = projectService.findByIdWithTasks(id);
+        model.addAttribute("project", project);
+        System.out.println(project.getTasks());
         return "project";
     }
 
@@ -62,7 +65,8 @@ public class tableTest {
     }
 
     @RequestMapping("/addTask")
-    public String addTask() {
+    public String addTask(Model model) {
+        model.addAttribute("task", new Task());
         return "addTask";
     }
 }

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>">
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
 <link rel="stylesheet" href="/resources/css/themify-icons.css">
 <link rel="stylesheet" href="/resources/css/metisMenu.css">

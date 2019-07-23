@@ -39,7 +39,8 @@
                                 <h4 class="header-title">Dodaj zadanie</h4>
                                 <div class="form-group">
                                     <label for="example-text-input" class="col-form-label">Nazwa</label>
-                                    <form:input path="name" class="form-control" type="text" placeholder="Nazwa zadania" id="example-text-input"/>
+                                    <form:input path="name" class="form-control" type="text" placeholder="Nazwa zadania"
+                                                id="example-text-input"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="example-email-input" class="col-form-label">Emaile osób do
@@ -50,14 +51,16 @@
                                 <div class="form-group">
                                     <label class="col-form-label">Projekt nadrzędny</label>
                                     <select class="custom-select">
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <c:forEach var="p" items="${projects}">
+                                            <option value="${p.id}">${p.name}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="example-datetime-local-input" class="col-form-label">Termin zadania</label>
-                                    <input class="form-control" type="datetime-local" value="2018-07-19T15:30:00" id="example-datetime-local-input">
+                                    <label for="example-datetime-local-input" class="col-form-label">Termin
+                                        zadania</label>
+                                    <input class="form-control" type="datetime-local" value="2018-07-19T15:30:00"
+                                           id="example-datetime-local-input">
                                 </div>
                             </div>
                         </form:form>

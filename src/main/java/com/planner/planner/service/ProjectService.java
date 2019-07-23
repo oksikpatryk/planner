@@ -3,10 +3,11 @@ package com.planner.planner.service;
 import com.planner.planner.entity.Project;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ProjectService {
     List<Project> findAll();
+    List<Project> findAllWithTasks();
     Project save(Project project);
-    Optional<Project> findById(Long id);
+    Project findById(Long id);
+    Project findByIdWithTasks(Long id);
 }

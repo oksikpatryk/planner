@@ -2,9 +2,9 @@ package com.planner.planner.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -24,4 +24,7 @@ public class Project {
 //    @NotEmpty
 //    @ManyToMany
 //    private List<User> users = new ArrayList<>();
+    @ToString.Exclude
+    @OneToMany(mappedBy = "project")
+    private List<Task> tasks;
 }

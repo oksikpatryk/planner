@@ -34,62 +34,39 @@
                 <div class="col-md-8 mt-3">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">Zadania na dziś</h4>
+                            <h4 class="header-title">${project.name}</h4>
                             <div class="single-table">
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <tbody>
-                                        <tr>
-                                            <td><i class="fa fa-circle-o red"></i></td>
-                                            <td class="col-1 red">Posprzątać</td>
-                                            <td class="text-right">Dom</td>
-                                            <td>
-                                                <i class="ti-more-alt" data-toggle="dropdown"></i>
-                                                <div class="dropdown-menu">
-                                                    <div><span class="dropdown-item disabled">Priorytet</span></div>
-                                                    <div class="dropdown-item">
-                                                        <a href="project/priority" class="col-pat-1"><i class="fa fa-flag-o gray" ></i></a>
-                                                        <a href="project/priority" class="col-pat-1"><i class="fa fa-flag-o green " ></i></a>
-                                                        <a href="project/priority" class="col-pat-1"><i class="fa fa-flag-o yellow"></i></a>
-                                                        <a href="project/priority" class="col-pat-1"><i class="fa fa-flag red"></i></a>
-                                                    </div><hr/>
-                                                    <div><a class="dropdown-item" href="#">Usuń</a></div>
-                                                    <div><a class="dropdown-item" href="#">Przypomnienie</a></div>
-                                                    <div><a class="dropdown-item" href="#">Poproś o pomoc</a></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa fa-circle-o green"></i></td>
-                                            <td class="col-1 green">kupić chleb</td>
-                                            <td class="text-right">Dom</td>
-                                            <td>
-                                                <i class="ti-more-alt" data-toggle="dropdown"></i>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">Usuń</a>
-                                                    <a class="dropdown-item" href="#">Przypomnienie</a>
-                                                    <a class="dropdown-item" href="#">Poproś o pomoc</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fa fa-circle-o gray"></i></td>
-                                            <td class="col-1 gray">praca domowa</td>
-                                            <td class="text-right">Szkoła</td>
-                                            <td>
-                                                <i class="ti-more-alt" data-toggle="dropdown"></i>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">Usuń</a>
-                                                    <a class="dropdown-item" href="#">Przypomnienie</a>
-                                                    <a class="dropdown-item" href="#">Poproś o pomoc</a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <c:forEach var="t" items="${project.tasks}">
+                                            <tr>
+                                                <td><i class="fa fa-circle-o red"></i></td>
+                                                <td class="col-1 red">${t.name}</td>
+                                                <td>
+                                                    <i class="ti-more-alt" data-toggle="dropdown"></i>
+                                                    <div class="dropdown-menu">
+                                                        <div><span class="dropdown-item disabled">Priorytet</span></div>
+                                                        <div class="dropdown-item">
+                                                            <a href="project/priority" class="col-pat-1"><i
+                                                                    class="fa fa-flag-o gray"></i></a>
+                                                            <a href="project/priority" class="col-pat-1"><i
+                                                                    class="fa fa-flag-o green "></i></a>
+                                                            <a href="project/priority" class="col-pat-1"><i
+                                                                    class="fa fa-flag-o yellow"></i></a>
+                                                            <a href="project/priority" class="col-pat-1"><i
+                                                                    class="fa fa-flag red"></i></a>
+                                                        </div>
+                                                        <hr/>
+                                                        <div><a class="dropdown-item" href="#">Usuń</a></div>
+                                                        <div><a class="dropdown-item" href="#">Przypomnienie</a></div>
+                                                        <div><a class="dropdown-item" href="#">Poproś o pomoc</a></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
                                         </tbody>
                                     </table>
-                                    <div>
-                                        <a href="/addTask" class="btn btn-rounded btn-success mb-3">Dodaj zadanie</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
