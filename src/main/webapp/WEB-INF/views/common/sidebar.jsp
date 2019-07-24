@@ -15,13 +15,17 @@
                 <ul class="metismenu" id="menu">
                     <li>
                         <a href="/addTask" aria-expanded="true"><i class="fa fa-plus"></i><span>Dodaj zadanie</span>
-                            <span class="pull-right-container"><span
-                                    class="badge badge-light pull-right">3</span></span></a>
+                            <span class="pull-right-container"></span></a>
                     </li>
                     <li>
                         <a href="/" aria-expanded="true"><i class="fa fa-angle-double-right"></i><span>Dziś</span>
-                            <span class="pull-right-container"><span
-                                    class="badge badge-light pull-right">3</span></span></a>
+                            <c:if test="${overdueTasks.size() > 0 }">
+                                <span class="pull-right-container"><span class="badge badge-danger pull-right">${fn:length(todayTasks) + fn:length(overdueTasks)}</span></span>
+                            </c:if>
+                            <c:if test="${overdueTasks.size() <= 0 }">
+                                <span class="pull-right-container"><span class="badge badge-light pull-right">${fn:length(todayTasks)}</span></span>
+                            </c:if>
+                        </a>
                     </li>
                     <li>
                         <a href="/nextSevenDays" aria-expanded="true"><i

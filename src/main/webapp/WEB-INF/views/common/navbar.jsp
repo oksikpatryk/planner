@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!-- header area start -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <div class="header-area">
@@ -5,10 +6,10 @@
         <!-- nav and search button -->
         <div class="col-md-6 col-sm-8 clearfix">
             <div class="search-box pull-left">
-                <form action="#">
-                    <input type="text" name="search" placeholder="Search..." required>
-                    <i class="ti-search"></i>
-                </form>
+                <form:form method="post" action="/searchedTask">
+                    <input type="text" name="searchedTask" placeholder="Search..." />
+                    <input type="submit" class="btn btn-primary mt-4 pr-4 pl-4"/>
+                </form:form>
             </div>
         </div>
         <!-- profile info & task notification -->

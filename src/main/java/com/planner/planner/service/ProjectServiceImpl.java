@@ -46,4 +46,9 @@ public class ProjectServiceImpl implements ProjectService {
         Hibernate.initialize(project.getTasks());
         return project;
     }
+
+    @Override
+    public void delete(Long id) {
+        projectRepo.deleteById(id);
+    }
 }

@@ -22,7 +22,7 @@ public class User {
     private String email;
     @NotNull
     private String password;
-//    @ManyToMany(mappedBy = "users")
-//    private List<Project> projects = new ArrayList<>();
+    @ManyToMany(mappedBy = "users")
+    private List<Project> projects = new ArrayList<>();
 }
 

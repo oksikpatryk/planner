@@ -22,8 +22,8 @@ public class Project {
     @NotEmpty(message = "Musisz podać nazwę projektu.")
     private String name;
 //    @NotEmpty
-//    @ManyToMany
-//    private List<User> users = new ArrayList<>();
+    @ManyToMany
+    private List<User> users = new ArrayList<>();
     @ToString.Exclude
     @OneToMany(mappedBy = "project")
     private List<Task> tasks;

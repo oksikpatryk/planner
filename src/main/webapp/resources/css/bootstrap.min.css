@@ -382,20 +382,20 @@ template {
     line-height: 1.2
 }
 
-.red {
+.priority-1 {
     color: var(--red);
 }
 
-.gray {
-    color: var(--gray-dark);
-}
-
-.green {
+.priority-2 {
     color: var(--green);
 }
 
-.yellow {
+.priority-3 {
     color: var(--yellow);
+}
+
+.priority-4 {
+    color: var(--gray-dark);
 }
 
 .display-4 {

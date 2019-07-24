@@ -34,8 +34,23 @@
                 <div class="col-md-8 mt-3">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">${project.name}</h4>
-                            <div class="single-table">
+                            <div class="row align-items-center">
+                                <!-- nav and search button -->
+                                <div class="col-md-6 col-sm-8 clearfix">
+                                    <div class="pull-left">
+                                        <h4 class="header-title">${project.name}</h4>
+                                    </div>
+                                </div>
+                                <!-- profile info & task notification -->
+                                <div class="col-md-6 col-sm-4 clearfix">
+                                    <ul class="notification-area pull-right">
+                                        <li><a href="/deleteProject/${project.id}" class="text-danger"><i class="ti-trash"></i></a></li>
+                                        <li><a href="/renameProject/${project.id}"><i class="fa fa-edit"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="row single-table">
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <tbody>

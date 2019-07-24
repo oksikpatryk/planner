@@ -10,4 +10,6 @@ public interface ProjectService {
     Project save(Project project);
     Project findById(Long id);
     Project findByIdWithTasks(Long id);
+
+    void delete(Long id);
 }
