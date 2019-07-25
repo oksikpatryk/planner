@@ -50,10 +50,6 @@ public class tableTest {
         return LocalDate.now().plusDays(1).toString();
     }
 
-    @ModelAttribute("searchedTask")
-    public String searchedTask(){
-        return "";
-    }
 
 
     @PostMapping("/searchedTask")

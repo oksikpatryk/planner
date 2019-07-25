@@ -7,8 +7,8 @@
         <div class="col-md-6 col-sm-8 clearfix">
             <div class="search-box pull-left">
                 <form:form method="post" action="/searchedTask">
-                    <input type="text" name="searchedTask" placeholder="Search..." />
-                    <input type="submit" class="btn btn-primary mt-4 pr-4 pl-4"/>
+                    <input type="text" name="searchedTask" placeholder="Wyszukaj zadanie..." />
+                    <input type="submit" hidden/>
                 </form:form>
             </div>
         </div>

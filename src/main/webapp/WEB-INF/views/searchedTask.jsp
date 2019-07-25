@@ -36,7 +36,7 @@
                     <div class="card">
                         <c:if test="${searchedTasks.size() > 0 }">
                             <div class="card-body">
-                                <h4 class="header-title text-danger">Zaległe zadania</h4>
+                                <h4 class="header-title text-danger">Znalezione zadania</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
                                         <table class="table table-hover">
