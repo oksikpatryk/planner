@@ -23,7 +23,6 @@ public class UserController {
     public String createUser() {
         User user = new User();
         user.setUsername("admin");
-        user.setEmail("admin@admin.pl");
         user.setPassword("admin");
         userService.saveUser(user);
         return "admin";
