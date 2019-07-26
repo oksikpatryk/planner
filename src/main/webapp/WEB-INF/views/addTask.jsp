@@ -39,13 +39,10 @@
                                 <h4 class="header-title">Dodaj zadanie</h4>
                                 <div class="form-group">
                                     <label for="example-text-input" class="col-form-label">Nazwa</label>
-                                    <form:input path="name" class="form-control" type="text" placeholder="Nazwa zadania" id="example-text-input"/>
+                                    <form:input path="name" cssClass="form-control" type="text" placeholder="Nazwa zadania"
+                                                id="example-text-input"/>
                                 </div>
                                 <div><form:errors path="name" cssClass="alert alert-danger"/></div>
-<%--                                <div class="form-group">--%>
-<%--                                    <label for="example-email-input" class="col-form-label">Emaile osób do pomocy</label>--%>
-<%--                                    <form:input path="" class="form-control" type="email" id="example-email-input">--%>
-<%--                                </div>--%>
                                 <div class="form-group">
                                     <label class="col-form-label">Projekt nadrzędny</label>
                                     <form:select path="project" class="custom-select">
@@ -57,19 +54,20 @@
                                 <div class="form-group">
                                     <label class="col-form-label">Priorytet</label>
                                     <form:select path="priority" class="custom-select">
-                                            <option class="priority-4" value="4">niski</option>
-                                            <option class="priority-3" value="3">normalny</option>
-                                            <option class="priority-2" value="2">średni</option>
-                                            <option class="priority-1" value="1">wysoki</option>
+                                        <option class="priority-4" value="4">niski</option>
+                                        <option class="priority-3" value="3">normalny</option>
+                                        <option class="priority-2" value="2">średni</option>
+                                        <option class="priority-1" value="1">wysoki</option>
                                     </form:select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="example-datetime-local-input" class="col-form-label">Termin zadania</label>
-                                    <form:input path="closeDate" cssClass="form-control" type="datetime-local" id="example-datetime-local-input"/>
+                                    <label for="example-datetime-local-input" class="col-form-label">Termin
+                                        zadania</label>
+                                    <form:input path="closeDate" cssClass="form-control" type="datetime-local"
+                                                id="example-datetime-local-input"/>
                                 </div>
-                                <div><form:errors path="closeDate" cssClass="alert alert-danger"/></div>
+                                <input type="submit" class="btn btn-primary mt-4 pr-4 pl-4"/>
                             </div>
-                            <input type="submit" class="btn btn-primary mt-4 pr-4 pl-4"/>
                         </form:form>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
         <!-- nav and search button -->
         <div class="col-md-6 col-sm-8 clearfix">
             <div class="search-box pull-left">
-                <form:form method="post" action="/searchedTask">
+                <form:form method="post" action="/tasks/searchedTask">
                     <input type="text" name="searchedTask" placeholder="Wyszukaj zadanie..." />
                     <input type="submit" hidden/>
                 </form:form>
@@ -123,9 +123,10 @@
                     <img class="avatar user-thumb dropdown-toggle" data-toggle="dropdown"
                          src="/resources/images/author/avatar.png" alt="avatar">
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Message</a>
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Log Out</a>
+                        <form action="<c:url value="/logout"/>" method="post">
+                            <input class="dropdown-item" type="submit" value="Wyloguj">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        </form>
                     </div>
                 </li>
             </ul>

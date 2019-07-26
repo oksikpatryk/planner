@@ -2,6 +2,7 @@ package com.planner.planner.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -18,9 +19,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = false, unique = true)
     private String username;
-
+    @NotNull(message = "Wpisz hało!")
     private String password;
     @ManyToMany(mappedBy = "users")
     private List<Project> projects = new ArrayList<>();

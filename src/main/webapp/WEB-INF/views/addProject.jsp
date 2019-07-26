@@ -36,11 +36,12 @@
                 <div class="col-md-8 mt-3">
                     <div class="card">
                         <div class="card-body">
-                            <form:form modelAttribute="project" method="post">
+                            <form:form action="${action}" modelAttribute="project" method="post">
+                                <form:hidden path="id"/>
                                 <h4 class="header-title">Dodaj projekt</h4>
                                 <div class="form-group">
                                     <label for="example-text-input" class="col-form-label">Nazwa</label>
-                                    <form:input path="name" class="form-control" type="text" placeholder="Nowy projektu" id="example-text-input"/>
+                                    <form:input path="name" class="form-control" type="text" placeholder="Nazwa projektu" id="example-text-input"/>
                                 </div>
                                 <div><form:errors path="name" cssClass="alert alert-danger"/></div>
                                 <%--                                    <div>--%>

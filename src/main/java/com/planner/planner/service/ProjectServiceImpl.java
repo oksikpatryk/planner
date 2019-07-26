@@ -1,6 +1,7 @@
 package com.planner.planner.service;
 
 import com.planner.planner.entity.Project;
+import com.planner.planner.entity.User;
 import com.planner.planner.repository.ProjectRepo;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
@@ -19,13 +20,8 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public List<Project> findAll() {
-        return projectRepo.findAll();
-    }
-
-    @Override
-    public List<Project> findAllWithTasks() {
-        List<Project> projects = findAll();
+    public List<Project> findAllWithTasks(CurrentUser user) {
+        List<Project> projects = projectRepo.findAllByUsers(user.getUser());
         projects.forEach(project -> Hibernate.initialize(project.getTasks()));
         return projects;
     }
@@ -36,13 +32,13 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Project findById(Long id) {
-        return projectRepo.findById(id).orElse(null);
+    public Project findById(Long id, CurrentUser user) {
+        return projectRepo.findByIdAndUsers(id, user.getUser());
     }
 
     @Override
-    public Project findByIdWithTasks(Long id) {
-        Project project = findById(id);
+    public Project findByIdWithTasks(Long id, CurrentUser user) {
+        Project project = findById(id, user);
         Hibernate.initialize(project.getTasks());
         return project;
     }

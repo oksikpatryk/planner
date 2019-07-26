@@ -6,8 +6,13 @@ import com.planner.planner.service.UserService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.validation.Valid;
 
 @Controller
 public class UserController {
@@ -19,13 +24,18 @@ public class UserController {
     }
 
     @GetMapping("/create-user")
-    @ResponseBody
-    public String createUser() {
-        User user = new User();
-        user.setUsername("admin");
-        user.setPassword("admin");
+    public String createUser(Model model) {
+        model.addAttribute("user", new User());
+        return "register";
+    }
+
+    @PostMapping("/create-user")
+    public String createUser(@Valid User user, BindingResult result) {
+        if (result.hasErrors()){
+            return "create-user";
+        }
         userService.saveUser(user);
-        return "admin";
+        return "redirect:/login";
     }
 
 //    @GetMapping("/admin")
@@ -40,7 +50,7 @@ public class UserController {
     @ResponseBody
     public String admin(@AuthenticationPrincipal CurrentUser customUser) {
         User entityUser = customUser.getUser();
-        return "Hello " + entityUser.getUsername();
+        return "Hello " + entityUser.getUsername() + ", " + entityUser.getId();
     }
 
 }

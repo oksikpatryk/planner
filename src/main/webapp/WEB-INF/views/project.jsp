@@ -44,8 +44,8 @@
                                 <!-- profile info & task notification -->
                                 <div class="col-md-6 col-sm-4 clearfix">
                                     <ul class="notification-area pull-right">
-                                        <li><a href="/deleteProject/${project.id}" class="text-danger"><i class="ti-trash"></i></a></li>
-                                        <li><a href="/renameProject/${project.id}"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="/tasks/deleteProject/${project.id}" class="text-danger"><i class="ti-trash"></i></a></li>
+                                        <li><a href="/tasks/renameProject/${project.id}"><i class="fa fa-edit"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

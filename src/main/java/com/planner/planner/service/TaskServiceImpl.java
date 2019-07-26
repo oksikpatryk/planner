@@ -25,13 +25,13 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> findAllTaskWithIntervalInDaysOrderByPriority(int intervalInDays) {
-        return taskRepo.findAllTaskWithIntervalInDaysOrderByPriority(intervalInDays);
+    public List<Task> findAllTaskWithIntervalInDaysOrderByPriority(int intervalInDays, CurrentUser user) {
+        return taskRepo.findAllTaskWithIntervalInDaysOrderByPriority(intervalInDays, user.getUser().getId());
     }
 
     @Override
-    public List<Task> findAllOverdueTasks() {
-        return taskRepo.findAllByCloseDateAfter();
+    public List<Task> findAllOverdueTasks(CurrentUser user) {
+        return taskRepo.findAllByCloseDateAfter(user.getUser().getId());
     }
 
     @Override
@@ -55,7 +55,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> findAllByNameContaining(String searchedTask) {
-        return taskRepo.findAllByNameContaining(searchedTask);
+    public List<Task> findAllByNameContaining(String searchedTask, CurrentUser user) {
+        return taskRepo.findAllByNameContaining(searchedTask, user.getUser().getId());
     }
 }

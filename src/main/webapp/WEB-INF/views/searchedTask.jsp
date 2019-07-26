@@ -36,7 +36,7 @@
                     <div class="card">
                         <c:if test="${searchedTasks.size() > 0 }">
                             <div class="card-body">
-                                <h4 class="header-title text-danger">Znalezione zadania</h4>
+                                <h4 class="header-title text-dark">Znalezione zadania</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
                                         <table class="table table-hover">
@@ -91,7 +91,11 @@
                                 </div>
                             </div>
                         </c:if>
-                        <c:if test="${searchedTasks.size() <= 0 }"><h4 class="header-title text-danger">Brak zadań o takiej nazwie</h4></c:if>
+                        <c:if test="${searchedTasks.size() <= 0 }">
+                            <div class="card-body">
+                                <h4 class="header-title text-danger">Brak zadań o takiej nazwie</h4>
+                            </div>
+                        </c:if>
                     </div>
                 </div>
                 <!-- accordion style 4 end -->

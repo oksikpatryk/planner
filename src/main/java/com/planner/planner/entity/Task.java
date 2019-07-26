@@ -19,8 +19,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
-    @NotEmpty
+    @Size(min = 1, max = 100)
     private String name;
     private LocalDateTime closeDate;
 //    private List<String> emails = new ArrayList<>();

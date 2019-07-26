@@ -25,6 +25,7 @@ public class Project {
     @ManyToMany
     private List<User> users = new ArrayList<>();
     @ToString.Exclude
-    @OneToMany(mappedBy = "project")
+
+    @OneToMany(mappedBy = "project", cascade = CascadeType.REMOVE)
     private List<Task> tasks;
 }
